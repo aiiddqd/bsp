@@ -1,4 +1,4 @@
-# BetterStack Logs for WordPress and WooCommerce
+# BetterStack Logs for WordPress and for WooCommerce
 
 Better Stack lets you see inside any stack, debug any issue, and resolve any incident.
 
