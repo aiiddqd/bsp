@@ -1,6 +1,6 @@
 === BSP ===
-Contributors: (this should be a list of wordpress.org userid's)
-Donate link: https://example.com/
+Contributors: ddev, caspepress
+Donate link: https://github.com/uptimizt/bsp
 Tags: logger, logs
 Requires at least: 6.1
 Tested up to: 6.4
