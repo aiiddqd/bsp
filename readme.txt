@@ -1,5 +1,5 @@
 === BSP ===
-Contributors: ddev, caspepress
+Contributors: ddev, casepress
 Donate link: https://github.com/uptimizt/bsp
 Tags: logger, logs
 Requires at least: 6.1
