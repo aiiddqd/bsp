@@ -8,7 +8,7 @@
 namespace BetterStackPress;
 
 if ( defined( 'BETTERSTACK_LOGS_SOURCE_TOKEN' ) ) {
-	add_action( 'shutdown', function () {
+	add_action( 'shutdown', static function () {
 
 		$error = error_get_last();
 
@@ -23,7 +23,7 @@ if ( defined( 'BETTERSTACK_LOGS_SOURCE_TOKEN' ) ) {
 		send_to_betterstack( $error );
 	}, 1 );
 
-	add_filter( 'wp_php_error_message', function ($message, $error) {
+	add_filter( 'wp_php_error_message', static function ( $message, $error ) {
 
 		send_to_betterstack( $error );
 
