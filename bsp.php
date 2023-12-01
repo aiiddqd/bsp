@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BetterStack Press
  * Description: Simple integration for logger WP and BetterStack Logs. const BETTERSTACK_LOGS_SOURCE_TOKEN get here https://logs.betterstack.com/
- * Version: 0.1
+ * Version: 0.2
  */
 
 namespace BetterStackPress;
@@ -33,9 +33,6 @@ if ( defined( 'BETTERSTACK_LOGS_SOURCE_TOKEN' ) ) {
 }
 
 
-/**
- * log url https://logs.betterstack.com/team/185265/tail
- */
 function send_to_betterstack( $error ) {
 	$error = [ 
 		'message' => wp_trim_words( $error['message'], 11, '...' ),
