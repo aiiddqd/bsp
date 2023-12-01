@@ -8,4 +8,8 @@ Stable tag: 0.2
 Requires PHP: 8.1
 License: GPLv2 or later
 License URI: https://www.gnu.org/licenses/gpl-2.0.html
-Here is a short description of the plugin.  This should be no more than 150 characters.  No markup here.
+
+
+Better Stack lets you see inside any stack, debug any issue, and resolve any incident.
+
+
