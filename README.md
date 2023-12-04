@@ -10,6 +10,9 @@ Better Stack lets you see inside any stack, debug any issue, and resolve any inc
 wp plugin install https://github.com/uptimizt/bsp/archive/master.zip --force --activate
 ```
 
+1. get token from https://logs.betterstack.com/
+2. add const `define('BETTERSTACK_LOGS_SOURCE_TOKEN', "token");` to wp-config.php
+
 
 # todo
 - add filter for extend log
