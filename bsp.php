@@ -2,7 +2,7 @@
 /**
  * Plugin Name: BetterStack for WP and for WooCommerce
  * Description: Simple integration for logger WP and BetterStack Logs. const BETTERSTACK_LOGS_SOURCE_TOKEN get here https://logs.betterstack.com/
- * Version: 0.2
+ * Version: 0.3
  */
 
 namespace BetterStackPress;

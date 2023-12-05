@@ -11,7 +11,8 @@ wp plugin install https://github.com/uptimizt/bsp/archive/master.zip --force --a
 ```
 
 1. get token from https://logs.betterstack.com/
-2. add const `define('BETTERSTACK_LOGS_SOURCE_TOKEN', "token");` to wp-config.php
+2. add source to BS Logs and get token (choose PHP as platform)
+3. add const `define('BETTERSTACK_LOGS_SOURCE_TOKEN', "token");` to wp-config.php
 
 
 # todo
