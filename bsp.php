@@ -80,7 +80,7 @@ function send_to_betterstack( $error ) {
  * simple test for check BetterStack
  * 
  * 1. just run {{siteUrl}}/?test_BetterStackLogsIntegration
- * 2. check log https://logs.betterstack.com/team/185265/tail
+ * 2. check log https://logs.betterstack.com/
  */
 add_action( 'init', function () {
 
