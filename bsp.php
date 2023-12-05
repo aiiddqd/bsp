@@ -34,26 +34,36 @@ if ( defined( 'BETTERSTACK_LOGS_SOURCE_TOKEN' ) ) {
 
 
 function send_to_betterstack( $error ) {
-	$error = [ 
-		'message' => wp_trim_words( $error['message'], 11, '...' ),
-		'nested' => $error,
+	$message = explode( 'Stack trace:', $error['message'] );
+
+	$data = [ 
+		'message' => trim( $message[0] ),
+		'nested' => [],
 	];
 
+	if ( isset( $message[1] ) ) {
+		$data['nested']['stack_trace'] = explode( "\n", trim( $message[1] ) );
+	}
+
 	if ( $user_id = get_current_user_id() ) {
-		$error['nested']['user_id'] = $user_id;
+		$data['nested']['user_id'] = $user_id;
 	}
 
 	if ( isset( $_SERVER['REQUEST_URI'] ) ) {
-		$error['nested']['request'] = $_SERVER['REQUEST_URI'];
+		$data['nested']['request'] = $_SERVER['REQUEST_URI'];
 	}
 
 	if ( isset( $_SERVER['HTTP_REFERER'] ) ) {
-		$error['nested']['referer'] = urlencode( $_SERVER['HTTP_REFERER'] );
+		$data['nested']['referer'] = $_SERVER['HTTP_REFERER'];
 	} else {
-		$error['nested']['referer'] = 'unknown';
+		$data['nested']['referer'] = 'unknown';
 	}
 
-	$json = json_encode( $error );
+	if ( isset( $error['type'] ) ) {
+		$data['nested']['type'] = $error['type'];
+	}
+
+	$json = json_encode( $data );
 
 	$result = wp_remote_post( 'https://in.logs.betterstack.com', [ 
 		'headers' => [ 
@@ -65,3 +75,18 @@ function send_to_betterstack( $error ) {
 
 	return $result;
 }
+
+/**
+ * simple test for check BetterStack
+ * 
+ * 1. just run {{siteUrl}}/?test_BetterStackLogsIntegration
+ * 2. check log https://logs.betterstack.com/team/185265/tail
+ */
+add_action( 'init', function () {
+
+	if ( ! isset( $_GET['test_BetterStackLogsIntegration'] ) ) {
+		return;
+	}
+
+	test_wrong_function();
+} );
