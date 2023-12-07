@@ -1,5 +1,6 @@
 ---
 name: Epic
+about: Epic, futures or projects
 labels: epic
 
 ---
